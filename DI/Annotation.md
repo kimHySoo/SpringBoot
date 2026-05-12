@@ -82,3 +82,18 @@ public @interface CustomAnnotation {
     - `RUNTIME` : 프로그램이 실행되는 런타임 시점까지 메모리에 유지됨!
         - `Reflection API` 를 이용해 실행 중에도 어노테이션 정보를 읽어와서 특정 로직 수행 가능
     
+
+### @Component 계열 어노테이션
+| 어노테이션 | 용도 | 설명 |
+|---|---|---|
+| @Component | 일반 컴포넌트 | 범용적인 스프링 빈 등록 |
+| @Controller | 프레젠테이션 계층 | MVC 컨트롤러 클래스에 사용 |
+| @Service | 비즈니스 계층 | 비즈니스 로직 클래스에 사용 |
+| @Repository | 데이터 접근 계층 | DAO 클래스에 사용, 예외 변환 기능 |
+| @Configuration | 설정 클래스 | Java Config 설정 클래스에 사용 |
+
+@Controller, @Service, @Repository는 모두 @Component를 상속받은 특수화된 어노테이션
+기능적으로 동일하지만, 계층을 구분하기 위해 사용
+따라서 DTO처럼 특정 계층에 해당하지 않는 클래스는 @Component, 나머지는 역할에 맞게 사용
+
+

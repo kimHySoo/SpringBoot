@@ -55,6 +55,26 @@ c.getDeclaredMethod("setAge", int.class).invoke(cat, 2);
 
 Spring IoC 컨테이너에 Bean을 등록하는 방식은 크게 **XML 방식**과 **Java 방식**으로 나뉜다.
 
+IoC(Inversion of Control) -> 구현 방법이 DI
+ - 객체의 생성과 생명주기 관리를 개발자가 아닌 프레임워크(Spring Container)에게 위임
+
+Bean은 Spring IoC Container가 관리하는 객체
+ - Spring Container에 의해 생성되고 관리
+ - 기본적으로 싱글톤(Singleton)으로 관리
+ - 설정파일(XML 또는 Java Config)에 정의
+
+
+
+```java
+
+//IoC 적용: 프레임워크가 객체를 생성하고 주입
+public class OrderService{
+    private OrderRepository repository; //Spring이 주입
+    private PaymentService payment; //Spring이 주입
+}
+```
+
+
 ```
 Bean 등록 방법
 ├── 1. XML 설정
